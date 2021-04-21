@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Invoice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/libs/bootstrap-4.6/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/libs/bootstrap-4.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/index.css"/>
+    <link rel="stylesheet" href="assets/css/plata.css">
+
+    <script>
+        const basket = {};
+
+    </script>
+    <script>
+        function load_category(cat) {
+            this.onTriggerMainMenu('menu-main');
+            console.log(basket);
+            document.getElementsByClassName("current_category")[0].className = "category_hidden";
+            document.getElementById(cat).className = "current_category";
+        }
+    </script>
+
+</head>
+
+<body>
+<section class="grid-app bg-field">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-lemon">
+            <a class="navbar-brand brand-main" href="#">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img class="img-fluid" src="assets/icons/logo.png" alt="App Logo"/>
+                    <span class="text-light"><b>Food</b></span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-link-spaced ml-auto">
+                    <li class="nav-item active">
+                        <button class="btn btn-green active" data-toggle="modal" data-target="#cart">
+                            Shopping cart (<span
+                                class="total-quantity"></span>)
+                            <i class="bi bi-cart"></i>
+                        </button>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link btn-pink" href="#" data-toggle="modal" data-target="#payment">
+                            Payment
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </nav>
+        <div class="bg-dark">
+            <div class="container">
+                <div class="position-relative">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0 ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <button id="menu-main-trigger" class="btn btn-dark btn-block"
+                                            onclick="onTriggerMainMenu('menu-main')">
+                                        Produse
+                                        <i class="bi bi-stack"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="menu-main  d-none" id="menu-main">
+                        <div class="nav nav-sidebar flex-column bg-light" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                               role="tab" aria-controls="v-pills-home" aria-selected="true">
+                                Supermarket
+                                <i class="bi bi-cart"></i>
+                            </a>
+                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                               role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                Gaming, Carti, Birotica
+                                <i class="bi bi-joystick"></i>
+                            </a>
+                            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+                               role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                                Fashion
+                                <i class="bi bi-bag-fill"></i>
+                            </a>
+                        </div>
+                        <div class="tab-content bg-white" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                 aria-labelledby="v-pills-home-tab">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <div class="card product-category-card" onclick="load_category('branzeturi')">
+                                                <img src="assets/icons/phila.jpg" class="card-img-top" alt="Category Image">
+                                                <div class="card-header">
+                                                    <h5 class="card-title">Branzeturi</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="card product-category-card" onclick="load_category('mezeluri')">
+                                                <img src="assets/icons/special.jpg" class="card-img-top" alt="Category Image">
+                                                <div class="card-header">
+                                                    <h5 class="card-title">Mezeluri</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="card product-category-card" onclick="load_category('empty')">
+                                                <img src="assets/icons/povestea-iaurtului.png" class="card-img-top" alt="Category Image">
+                                                <div class="card-header">
+                                                    <h5 class="card-title">Iaurturi</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="card product-category-card" onclick="load_category('empty')">
+                                                <img src="assets/icons/milk-cream-food.png" class="card-img-top" alt="Category Image">
+                                                <div class="card-header">
+                                                    <h5 class="card-title">Lapte</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                 aria-labelledby="v-pills-profile-tab">Nothing here
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                                 aria-labelledby="v-pills-messages-tab">Not even here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+                            <div class="sidenav">
+                                <button class="dropdown-btn">Lactate
+                                    <i class="bi bi-chevron-compact-down"></i>
+                                </button>
+                                <div class="dropdown-container">
+                                    <a href="#" onclick="load_category('branzeturi')">Branzeturi</a>
+                                    <a href="#" onclick="load_category('demo')">Demo</a>
+                                    <a href="#" onclick="load_category('empty')">Iaurt</a>
+                                    <a href="#" onclick="load_category('empty')">Lapte</a>
+                                    <a href="#" onclick="load_category('empty')">Smantana</a>
+                                </div>
+                                <a href="#clients" onclick="load_category('mezeluri')">Mezeluri</a>
+                                <a href="#contact" onclick="load_category('inghetata')">Inghetata</a>
+                                <button class="dropdown-btn">Carne
+                                    <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-container">
+                                    <a href="#" onclick="load_category('empty')">Pasare</a>
+                                    <a href="#" onclick="load_category('empty')">Porc</a>
+                                    <a href="#" onclick="load_category('empty')">Vita/manzat</a>
+                                    <a href="#" onclick="load_category('empty')">Oaie/miel</a>
+                                </div>
+                                <a href="#contact" onclick="load_category('empty')">Pescarie</a>
+                                <a href="#contact" onclick="load_category('empty')">Oua</a>
+                            </div>-->
+    </header>
+    <section class="grid-content container">
+        <div class="sidebar-filters">
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label for="formControlRange">Price</label>
+                        <input type="range" class="form-control-range" id="formControlRange">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputState">Brand</label>
+                        <select id="inputState" class="form-control">
+                            <option>Choose...</option>
+                            <option>Nokia</option>
+                            <option selected>Samsung</option>
+                            <option>Apple</option>
+                        </select>
+                    </div>
+                    <fieldset class="form-group row">
+                        <legend class="col-form-label col-sm-12 float-sm-left pt-0">Radios</legend>
+                        <div class="col-sm-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                       value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    First radio
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                                       value="option2">
+                                <label class="form-check-label" for="gridRadios2">
+                                    Second radio
+                                </label>
+                            </div>
+                            <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
+                                       value="option3" disabled>
+                                <label class="form-check-label" for="gridRadios3">
+                                    Third disabled radio
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label for="formControlRange">Price</label>
+                        <input type="range" class="form-control-range" id="formControlRange">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputState">Brand</label>
+                        <select id="inputState" class="form-control">
+                            <option>Choose...</option>
+                            <option>Nokia</option>
+                            <option selected>Samsung</option>
+                            <option>Apple</option>
+                        </select>
+                    </div>
+                    <fieldset class="form-group row">
+                        <legend class="col-form-label col-sm-12 float-sm-left pt-0">Radios</legend>
+                        <div class="col-sm-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                       value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    First radio
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                                       value="option2">
+                                <label class="form-check-label" for="gridRadios2">
+                                    Second radio
+                                </label>
+                            </div>
+                            <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
+                                       value="option3" disabled>
+                                <label class="form-check-label" for="gridRadios3">
+                                    Third disabled radio
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="content-main">
+            <div id="branzeturi" class="current_category">
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/phila.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b>Crema de branza Philadelphia</b>
+                                </h5>
+                                <p class="card-text">200 g</p>
+                                <p class="card-text">9 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <a href="#" class="btn btn-block btn-green"
+                                   onclick="shoppingCart.addToBasket(1, 'Crema de branza Philadelphia', 9.0)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/sos-de-branzeturi-cascina-lia-130-g-8896204603422.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b>Sos de branzeturi Cascina Lia </b>
+                                </h5>
+                                <p class="card-text">130 g</p>
+                                <p class="card-text">7.10 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <a href="#" class="btn btn-block btn-green"
+                                   onclick="shoppingCart.addToBasket(1, 'Sos de branzeturi Cascina Lia', 7.10)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/mozzarella-zanetti-bufala-cu-trufe-125-g-8912053043230.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b> Mozzarella Zanetti Bufala cu trufe </b>
+                                </h5>
+                                <p class="card-text"> 125 g</p>
+                                <p class="card-text">12.70 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <a href="#" class="btn btn-block btn-green"
+                                   onclick="shoppingCart.addToBasket(1, 'Mozzarella Zanetti Bufala cu trufe', 12.70)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/branza-de-capra-rulou-cu-piper-100-gr-la-colline-8882986614814.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b> Branza de capra rulou cu piper  La Colline </b>
+                                </h5>
+                                <p class="card-text"> 100 g</p>
+                                <p class="card-text">11.20 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <a href="#" class="btn btn-block btn-green"
+                                   onclick="shoppingCart.addToBasket(1, 'Branza de capra rulou cu piper  La Colline', 11.20)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/branza-halloumi-mediterranea-cu-chilli-200g-8903408648222.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b> Branza halloumi Mediterranea cu chilli </b>
+                                </h5>
+                                <p class="card-text"> 200g</p>
+                                <p class="card-text">15.20 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <a href="#" class="btn btn-block btn-green"
+                                   onclick="shoppingCart.addToBasket(1, 'Branza halloumi Mediterranea cu chilli', 15.20)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/telemea.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b>Telemea</b>
+                                </h5>
+                                <p class="card-text">350 g</p>
+                                <p class="card-text">12 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <a href="#" class="btn btn-block btn-green"
+                                   onclick="shoppingCart.addToBasket(1, 'Telemea', 12.0)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/delaco.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b>Cascaval Delaco</b>
+                                </h5>
+                                <p class="card-text">450 g</p>
+                                <p class="card-text">19 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <a href="#" class="btn btn-block btn-green"
+                                   onclick="shoppingCart.addToBasket(3, 'Cascaval Delaco', 19.0)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="default" class="category_hidden text-center">
+                <h4><b>Bine ati venit!</b></h4>
+            </div>
+            <div id="mezeluri" class="category_hidden">
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/banatean.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b>Salam banatean feliat</b>
+                                </h5>
+                                <p class="card-text">100 g</p>
+                                <p class="card-text">6 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <button class="btn btn-block btn-green"
+                                        onclick="shoppingCart.addToBasket(4, 'Salam banatean feliat 100 g', 6.0)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/rustic.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b>Salam Rustic</b>
+                                </h5>
+                                <p class="card-text">300 g</p>
+                                <p class="card-text">9 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <button class="btn btn-block btn-green"
+                                        onclick="shoppingCart.addToBasket(5, 'Salam Rustic 300 g', 9.0)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/sibiu.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b>Salam Sibiu</b>
+                                </h5>
+                                <p class="card-text">350 g</p>
+                                <p class="card-text">21 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <button class="btn btn-block btn-green"
+                                        onclick="shoppingCart.addToBasket(6, 'Salam Sibiu 350 g', 21.0)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card card-product">
+                            <img src="assets/icons/special.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <b>Salam Sibiu Special</b>
+                                </h5>
+                                <p class="card-text">350 g</p>
+                                <p class="card-text">20 lei</p>
+                                <p class="card-text text-success">In stoc</p>
+                                <button class="btn btn-block btn-green"
+                                        onclick="shoppingCart.addToBasket(7, 'Salam Sibiu Special 350 g', 20.0)">
+                                    <i class="bi bi-cart"></i>
+                                    Cumpara
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="inghetata" class="category_hidden">
+                <div class="produse-container">
+                    <div class="produs">
+                        <img src="assets/icons/snickers.jpg"/>
+                        <p>Pachet Snickers
+                            <br>100 g</p>
+                        <p class="pret">21 lei</p>
+                        <p class="stoc">In stoc</p>
+                        <button class="btn btn-success"
+                                onclick="shoppingCart.addToBasket(8, 'Pachet Snickers 100 g', 21.0)">Cumpara
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-cart" viewBox="0 0 16 16">
+                                <path
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="empty" class="fara-produse category_hidden">Stoc epuizat, ne pare rau.</div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="shoppingcart" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shoppingcart">Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table">
+
+                    </table>
+                    <div>Total price: $<span class="total-cart"></span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="clear-cart btn btn-danger">Clear Cart</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#payment">Order now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="paymentcart" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentcart">Plata</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="bg-light main-padding">
+
+                        <div class="payment-details">
+
+                            <div class="title-bar flex-container">
+                                <span class="step-number complete">1</span>
+                                <span class="step-heading">Livrare si facturare</span>
+                                <a href="#" class="btn btn-change move-right">Modifica</a>
+                            </div>
+                            <div class="sub-section shipping-summary">
+                                <div class="address-box">
+                                    <span class="summary-label">Livrare:</span>
+                                    <form>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">NUME:</label>
+                                            <input type="text" class="form-control" id="sname" name="firstlastname" placeholder="nume">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">EMAIL:</label>
+                                            <input type="email" class="form-control" id="semail" name="email" placeholder="email">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">TELEFON:</label>
+                                            <input type="email" class="form-control" id="sphone" name="phone" placeholder="phone">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">ADRESA:</label>
+                                            <input type="text" class="form-control" id="saddress" name="address" placeholder="adresa">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">ORAS:</label>
+                                            <input type="text" class="form-control" id="scity" name="city" placeholder="oras">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">JUDET:</label>
+                                            <input type="text" class="form-control" id="scounty" name="county" placeholder="judet">
+                                        </div>
+
+                                        <button type="submit" class="mt-4 btn-style mb-3" onclick="shoppingCart.setShippingDetails(
+                                            this.form.firstlastname.value,
+                                            this.form.email.value,
+                                            this.form.phone.value,
+                                            this.form.address.value,
+                                            this.form.city.value,
+                                            this.form.county.value,
+                                        )">Salveaza datele de livrare</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="sub-section shipping-summary">
+                                <div class="address-box">
+                                    <span class="summary-label">Facturare:</span>
+                                    <form>
+
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">NUME:</label>
+                                            <input type="text" class="form-control" id="iname" name="firstlastname" placeholder="nume">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">EMAIL"</label>
+                                            <input type="email" class="form-control" id="iemail" name="email" placeholder="email">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">NUMAR DE TELEFOM:</label>
+                                            <input type="text" class="form-control" id="iphone" name="phone" placeholder="numar telefon">
+                                        </div>
+
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">ADRESA:</label>
+                                            <input type="text" class="form-control" id="iaddress" name="address" placeholder="adresa">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">ORAS:</label>
+                                            <input type="text" class="form-control" id="icity" name="city" placeholder="oras">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">JUDET:</label>
+                                            <input type="text" class="form-control" id="icounty" name="county" placeholder="judet">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">NUMELE COMPANIEI:</label>
+                                            <input type="text" class="form-control" id="icompany" name="company" placeholder="numele companiei">
+                                        </div>
+                                        <div class="number-card col-6">
+                                            <label for="inputCardNumber" class="form-label mt-2">CUI:</label>
+                                            <input type="text" class="form-control" id="icui" name="cui" placeholder="cui">
+                                        </div>
+
+                                        <button type="submit" class="mt-4 btn-style mb-3" onclick="shoppingCart.setInvoicingDetails(
+                                            this.form.firstlastname.value,
+                                            this.form.email.value,
+                                            this.form.phone.value,
+                                            this.form.address.value,
+                                            this.form.city.value,
+                                            this.form.county.value,
+                                            this.form.company.value,
+                                            this.form.cui.value,
+                                        )">Salveaza datele de livrare</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="title-bar flex-container mt-4">
+                                <span class="step-number">2</span>
+                                <span class="step-heading">Detalii plata</span>
+                            </div>
+
+                            <div class="sub-section">
+                                <form>
+                                    <h3 class="summary-label payment-select-option">Selectati o metoda de plata:</h3>
+
+                                    <div class="panel overflow-hidden mb-4 form-check bg-light">
+                                        <input class="button-radio-align button-color" type="radio" id="card-check"
+                                               data-toggle="collapse" name="paymentType"
+                                               data-target="#card-payment-info" aria-expanded="false"
+                                               aria-controls="card-payment" value="card">
+                                        <label class="form-check-label" for="card-check">
+                                            <!--onclick='setPayment(type, {cardNo, cardName, month, year, cvv})'-->
+                                            Card online
+                                        </label>
+
+                                        <div class="card-payment-information collapse row" id="card-payment-info"
+                                             aria-labelledby="card-check"
+                                             aria-expanded="false">
+                                            <div class="number-card col-6">
+                                                <label for="inputCardNumber" class="form-label mt-2">NUMARUL
+                                                    CARDULUI:</label>
+                                                <input type="text" class="form-control" id="inputCardNumber" name="inputCardNumber"
+                                                       placeholder="Te rugam sa completezi numarul cardului.">
+                                            </div>
+                                            <div class="number-cvv col-6">
+                                                <label for="inputCVVName" class="form-label mt-2">COD DE
+                                                    SECURITATE:</label>
+                                                <input type="text" class="form-control" id="inputCVVName" name="inputCVVName"
+                                                       placeholder="CVV/CVV2">
+                                            </div>
+                                            <div class="date-expiration mb-2 col-3">
+                                                <label for="expirationMonth" class="form-label">LUNA:</label>
+                                                <input type="text" class="form-control cvv" id="expirationMonth" name="expirationMonth"
+                                                       placeholder="11">
+                                            </div>
+                                            <div class="date-expiration mb-2 col-1">
+                                                <label for="expirationMonth" class="form-label">/</label>
+                                            </div>
+                                            <div class="date-expiration mb-2 col-3">
+                                                <label for="expirationMonth" class="form-label">AN:</label>
+
+                                                <input type="text" class="form-control cvv" id="expirationYear" name="expirationYear"
+                                                       placeholder="2022">
+                                            </div>
+                                            <div class="name-first mb-2">
+                                                <label for="ownerName" class="form-label">TITULAR CARD</label>
+                                                <input type="text" class="form-control" id="ownerName" name="ownerName"
+                                                       placeholder="NUMELE DETINATORULUI DE CARD">
+                                            </div>
+                                            <div class="option mb-2">
+                                                <input class="form-address-send-place" type="checkbox"
+                                                       id="save-information">
+                                                <label class="form-send-package" for="save-information">
+                                                    Salveaza informatiile pentru achizitii ulterioare.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check panel mb-2 bg-light">
+                                        <input class="button-radio-align" type="radio" id="cash-check" name="paymentType"
+                                               checked value="ramburs">
+                                        <label class="form-check-label" for="cash-check">
+                                            Plata la livrare
+                                        </label>
+                                    </div>
+
+                                    <div class="option mb-2 mt-4">
+                                        <input class="form-address-send-place" type="checkbox" id="form-terms">
+                                        <label class="form-send-package" for="form-terms">
+                                            Prin plasarea comenzii, sunt de acord cu termenii si conditiile acestui
+                                            site.
+                                        </label>
+                                    </div>
+
+                                <button type="submit" class="mt-4 btn-style mb-3" onclick="shoppingCart.setPayment(
+                                    this.form.paymentType.value,
+                                    this.form.inputCardNumber.value,
+                                    this.form.ownerName.value,
+                                    this.form.expirationMonth.value,
+                                    this.form.expirationYear.value,
+                                    this.form.inputCVVName.value,
+                                ); shoppingCart.process()">Plaseaza comanda
+                                </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-main">
+        <div class="container">
+            <div >
+                <p> S.C. BioFood Craiova</p>
+                <p> Contact: Strada Gladiolei, nr. 34, Craiova, DOLJ, Romania </p>
+                <p> Telefon: 074777777 </p>
+            </div>
+            <div class="text-center py-4">Copyright(c) 2021 Universitatea Craiova</div>
+        </div>
+    </footer>
+</section>
+<script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+<script>
+    function onTriggerMainMenu(elId) {
+        let menu = document.getElementById(elId);
+        if (menu) {
+            if (menu.classList.contains('d-none')) {
+                menu.classList.remove('d-none')
+            } else {
+                menu.classList.add('d-none')
+            }
+        } else {
+            console.error(`Element with id ${elId} not found`);
+        }
+    }
+</script>
+<script type="text/javascript" src="assets/libs/bootstrap-4.6/js/jquery-3.5.1.min.js"></script>
+<script src="assets/libs/bootstrap-4.6/js/bootstrap.min.js"></script>
+<script src="assets/libs/bootstrap-4.6/js/popper.min.js"></script>
+
+<script type="text/javascript" src="shoppingcart.js"></script>
+<script>
+
+</script>
+</body>
+
+</html>
+<!-- m-am inspirat de aici:
+https://www.w3schools.com/howto/howto_js_dropdown_sidenav.asp
+ -->

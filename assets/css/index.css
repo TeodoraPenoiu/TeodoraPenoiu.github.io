@@ -1,0 +1,511 @@
+/*start Alina*/
+
+:root {
+    --color-pink: #d27b7b;
+    --color-pink-deep: #8b5151;
+    --color-white: white;
+    --color-dark: #343a40;
+    --color-green: #339966;
+    --color-green-rgb: rgb(51, 153, 102);
+    --color-green-dark: #133926;
+    --color-lemon: #CAD61C;
+}
+
+body {
+
+    background-color: rgb(233, 235, 238);
+    font-family: "Lato", sans-serif;
+}
+
+/*header {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background: #333;
+  padding: 10px 0;
+  color: #fff;
+  top: 0;
+}*/
+
+/*.navigation-bar {
+    background: #dfe212;
+    padding: 15px 15px;
+    border-right: 1px solid white;
+    display: flex;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.subheader-stanga {
+    text-align: left;
+    font-size: 35px;
+    color: white;
+    font-family: "Garamond", sans-serif;
+    flex: 75%;
+    transform: scale(1, 1.5);
+    letter-spacing: 2px;
+    padding-left: 183px;
+    display: flex;
+}
+
+.subheader-dreapta {
+    flex: 25%;
+    color: #1e7b6e;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.subheader-dreapta button {
+    border-radius: 5px;
+    padding-bottom: 3px;
+    background-color: #d27b7b;
+}
+
+.subheader-stanga span {
+    padding-top: 8px;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.cos-cumparaturi {
+    float: left;
+}
+
+.contact {
+    text-align: left;
+    padding: 15px 300px;
+}
+
+.contact p {
+    padding: 3px;
+    margin: 0px !important;
+}
+
+
+.container {
+    height: 800px;
+    background-image: url('field.jpg');
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-logo img {
+    width: 90px;
+}
+
+
+
+#default {
+    font-size: 50px;
+    color: #f18615;
+    position: absolute;
+    top: 300px;
+    left: 500px;
+}
+
+#empty {
+    font-size: 50px;
+    color: #f18615;
+    position: absolute;
+    top: 300px;
+    left: 500px;
+}
+
+div.produse-container {
+    margin: 100px 50px !important;
+    display: flex;
+    flex-direction: row;
+}
+
+.produs {
+    border: solid;
+    border-radius: 8px;
+    border-color: green;
+    padding: 15px;
+    margin: 15px;
+    background: rgba(0, 151, 19, 0.24);
+    text-align: center;
+    width: 250px;
+}
+
+
+.produs button {
+    border-radius: 5px;
+    padding-bottom: 3px;
+    background-color: #d27b7b;
+}
+
+
+.pret {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stoc {
+    color: green;
+    font-style: italic;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 40px;
+    min-width: 250px;
+}
+
+
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+}
+
+
+.main {
+    margin-left: 200px;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+
+.active {
+    background-color: green;
+    color: white;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+!* end Alina*!
+
+*/
+
+/*.form-personal-data {
+    display: flex;
+}
+
+.form-personal-data > * {
+    margin-right: 20px;
+    width: 100%;
+}
+
+.form-checkout {
+    padding: 40px 60px;
+    width: 65%;
+    border: 1px solid black;
+}
+
+.form-address-place {
+    display: flex;
+}
+
+.form-address-place > * {
+    margin-right: 20px;
+    width: 100%;
+}
+
+.title-address-bill {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.title-address-delivery {
+    font-size: 20px;
+}
+
+.form-checkout > .address {
+    margin-right: 20px;
+    width: 97.5%;
+}
+
+.form-check-label {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 0 10px 10px;
+}
+
+.form-check-label::before {
+    content: "";
+}
+
+.buyer-preferred-payment-method > * {
+    width: 50%;
+}
+
+input[type="radio"] {
+    vertical-align: middle;
+    margin-top: 15px;
+    margin-left: 0 !important;
+}
+
+.panel {
+    width: 100%;
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+}
+
+.cvv {
+    width: 47%;
+}
+
+.card-payment-information {
+    border-top: 1px solid grey;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}*/
+
+
+/***************************
+** Alina Refactoring Start **
+***************************/
+
+.btn-pink {
+    color: #fff;
+    background-color: var(--color-pink);
+    border-color: var(--color-pink-deep);
+}
+.btn-green {
+    color: #fff;
+    background-color: var(--color-green-dark);
+    border-color: var(--color-green);
+}
+.btn-green:hover {
+    color: var(--color-white);
+    background-color: var(--color-green);
+    border-color: var(--color-green-dark);
+}
+
+.btn-pink:hover {
+    color: var(--color-pink);
+    background-color: var(--color-white);
+}
+
+.navbar-link-spaced > .nav-item {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.main-logo {
+    font-family: "Garamond", sans-serif;
+}
+
+.brand-main img {
+    width: 90px;
+
+}
+
+.card-product {
+    border-color: transparent;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 1px -2px rgba(51, 153, 102, .2), 0 2px 2px 0 rgba(51, 153, 102, 0.38), 0 1px 5px 0 rgba(51, 153, 102, 0.34);
+    text-align: center !important;
+}
+.card-product >img {
+    max-width: 200px;
+    margin: auto;
+}
+.content-main .row > * {
+    padding-bottom: 32px;
+}
+
+.card-product > .card-body p {
+    margin: 0;
+}
+
+.card-product > .card-body > .card-title {
+    min-height: calc(2 * 1.25em);
+    line-height: 1.25em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.grid-app {
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-rows: auto minmax(80vh, auto) auto;
+}
+
+@media (min-width: 1200px) {
+    .grid-app .container, .grid-app .container-lg, .grid-app .container-md, .grid-app .container-sm, .grid-app .container-xl {
+        max-width: 1440px;
+    }
+}
+
+.menu-main {
+    position: absolute;
+    width: 100%;
+    display: grid;
+    background-color: var(--color-white);
+    grid-template-columns: 2fr 9fr;
+    column-gap: 1em;
+    z-index: 2;
+    min-height: 60vh;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+.grid-content {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+    column-gap: 1em;
+}
+
+.sidebar-filters {
+
+    display: flex;
+    flex-direction: column;
+
+}
+.sidebar-filters > * {
+    margin-bottom: 16px;
+    border-radius: 4px !important;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    background-color: var(--color-white);
+    padding: 16px;
+}
+
+.menu-main .nav-sidebar {
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.menu-main .tab-pane {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.menu-main > .nav-sidebar .nav-link {
+    color: var(--color-dark);
+}
+
+.menu-main > .nav-sidebar .nav-link.active {
+    color: var(--primary);
+    margin-right: -3px;
+    background-color: var(--white);
+}
+
+
+
+
+.category_hidden {
+    display: none;
+}
+
+.bg-field {
+    background-image: url('field.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-lemon {
+    background-color: var(--color-lemon);
+}
+/* footer start*/
+.footer-main {
+    background: var(--color-green-dark);
+    border-right: 1px solid white;
+    color: white;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+/* footer end */
+
+
+
+/***************************
+** Alina Refactoring End **
+***************************/
+
+
+/*************************
+* product-category-card START **
+**************************/
+
+.product-category-card {
+    text-align: center;
+    padding-top: 16px;
+    margin-inline: 0;
+    margin: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.product-category-card > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 2px;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-category-card .card-header {
+    padding-bottom: 6px;
+    display: flex;
+    min-width: 0;
+    min-height: 54px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.product-category-card > .card-header .card-title {
+    font-size: 14px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin: 0;
+
+}
+
+/*************************
+* product-category-card END **
+**************************/

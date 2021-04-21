@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plata</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/libs/bootstrap-4.6.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/plata.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="deliveryAndInvoicing.js"></script>  
+
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="navigation-bar">
+            <div class="subheader-stanga">
+                <div class="container-logo">
+                    <img src="assets/icons/logo.png" alt="logo">
+                </div>
+                <span>Food</span>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="bg-light main-padding">
+
+    <h1 class="title">Plaseaza comanda</h1>
+    <div class="payment-details">
+
+        <div class="title-bar flex-container">
+            <span class="step-number complete">1</span>
+            <span class="step-heading">Livrare si facturare</span>
+            <a href="#" class="btn btn-change move-right">Modifica</a>
+        </div>
+        <div class="sub-section shipping-summary">
+            <div class="address-box">
+                <span class="summary-label">Livrare:</span>
+
+  <form>
+
+
+                        <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">NUME:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="nume">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">EMAIL"</label>
+                            <input type="email" class="form-control" id="inputCardNumber" placeholder="email">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">ADRESA:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="adresa">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">ORAS:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="oras">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">TARA:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="tara.">
+                        </div>
+
+                        <button type="submit" class="mt-4 btn-style mb-3" onclick="msg()">Salveaza datele de facturare</button>
+
+</form>
+</div>
+</div>
+        <div class="sub-section shipping-summary">
+            <div class="address-box">
+                <span class="summary-label">Facturare:</span>
+
+            <form>
+
+                        <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">NUME:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="nume">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">EMAIL"</label>
+                            <input type="email" class="form-control" id="inputCardNumber" placeholder="email">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">NUMAR DE TELEFOM:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="numar telefon">
+                        </div>
+
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">ADRESA:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="adresa">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">ORAS:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="oras">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">TARA:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="tara.">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">NUMELE COMPANIEI:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="numele companiei">
+                        </div>
+                                                <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">CUI:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="cui">
+                        </div>
+
+                        <button type="submit" class="mt-4 btn-style mb-3" onclick="process()">Salveaza datele de livrare</button>
+
+
+                </div>
+</form>
+ 
+            </div>
+        </div>
+
+        <div class="title-bar flex-container mt-4">
+            <span class="step-number">2</span>
+            <span class="step-heading">Detalii plata</span>
+        </div>
+
+        <div class="sub-section">
+            <form>
+                <h3 class="summary-label payment-select-option">Selectati o metoda de plata:</h3>
+
+                <div class="panel overflow-hidden mb-4 form-check bg-light">
+                    <input class="button-radio-align button-color" type="radio" id="card-check" data-toggle="collapse" name="Check"
+                           data-target="#collapse-card">
+                    <label class="form-check-label" for="card-check" onclick='setPayment(type, {cardNo, cardName, month, year, cvv})'>
+                        Card online
+                    </label>
+
+                    <div class="card-payment-information collapse row" id="collapse-card">
+                        <div class="number-card col-6">
+                            <label for="inputCardNumber" class="form-label mt-2">NUMARUL CARDULUI:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="Te rugam sa completezi numarul cardului.">
+                        </div>
+                        <div class="number-cvv col-6">
+                            <label for="inputCVVName" class="form-label mt-2">COD DE SECURITATE:</label>
+                            <input type="text" class="form-control" id="inputCVVName" placeholder="CVV/CVV2">
+                        </div>
+                        <div class="date-expiration mb-2 col-3">
+                            <label for="expirationDate" class="form-label">DATA DE EXPIRARE:</label>
+                            <input type="text" class="form-control cvv" id="expirationDate" placeholder="EX: 11/22">
+                        </div>
+                        <div class="name-first mb-2">
+                            <label for="ownerName" class="form-label">TITULAR CARD</label>
+                            <input type="text" class="form-control" id="ownerName" placeholder="NUMELE DETINATORULUI DE CARD">
+                        </div>
+                        <div class="option mb-2">
+                            <input class="form-address-send-place" type="checkbox" id="save-information">
+                            <label class="form-send-package" for="save-information">
+                                Salveaza informatiile pentru achizitii ulterioare.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-check panel mb-2 bg-light">
+                    <input class="button-radio-align" type="radio" id="cash-check" name="Check" checked>
+                    <label class="form-check-label" for="cash-check">
+                        Plata la livrare
+                    </label>
+                </div>
+
+                <div class="option mb-2 mt-4">
+                    <input class="form-address-send-place" type="checkbox" id="form-terms">
+                    <label class="form-send-package" for="form-terms">
+                        Prin plasarea comenzii, sunt de acord cu termenii si conditiile acestui site.
+                    </label>
+                </div>
+            </form>
+
+            <button type="submit" class="mt-4 btn-style mb-3" onclick="process()">Plaseaza comanda</button>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer">
+        <div class="contact">
+            <p> S.C. BioFood Craiova</p>
+            <p> Contact: Strada Gladiolei, nr. 34, Craiova, DOLJ, Romania </p>
+            <p> Telefon: 074777777 </p>
+        </div>
+        <div class="subfooter">Copyright(c) 2021 Universitatea Craiova</div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+.form-personal-data {
+    display: flex;
+}
+
+.form-checkout {
+    padding: 40px 60px;
+    width: fit-content;
+    border: 1px solid black;
+}
+
+.form-address-place {
+    display: flex;
+}
+
+.form-address-place > * {
+    margin-right: 20px;
+    width: 100%;
+}
+
+.title-address-bill {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.title-address-delivery {
+    font-size: 20px;
+}
+
+.form-checkout > .address {
+    margin-right: 20px;
+    width: 97.5%;
+}
+
+.form-check-label  {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 0 10px 10px;
+}
+
+.form-check-label::before {
+    content: "";
+}
+
+.buyer-preferred-payment-method {
+    width: 50%;
+    margin-right: auto;
+    margin-left: 15%;
+    background-color: #bebebf;
+}
+
+.panel {
+    border: 5px ridge whitesmoke;
+    background-color: #eaf2f2;
+}
+
+.card-padding {
+    padding-right: 1.5rem;
+}
+
+.card-payment-information {
+    border-top: 1px solid grey;
+    padding-bottom: 1em;
+}
+
+.button-radio-align {
+    width: 1em;
+    height: 1em;
+}
+
+.button-radio-align[type="radio"] {
+    border-radius: 50%;
+}
+
+.panel[type="radio"]::before {
+    background-color: #6c757d;
+}
+
+.title-bar {
+    background-color: #6c757d;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.shipping-summary address{
+    font-size: 13px;
+    display: inline;
+}
+
+.sub-section {
+    background-color: #f2f2f2;
+    padding: 15px 60px;
+}
+
+body {
+    font-family: "latoregular","Helvetica",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #2d2d2d;
+    background-color: #fff;
+}
+
+.shipping-summary, .summary-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 5px;
+}
+
+address {
+    margin-bottom: 20px;
+    font-style: normal;
+    line-height: 1.42857143;
+}
+.complete {
+    background: #133926!important;
+    color: #fff!important;
+}
+
+.title-bar .step-number {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    background: #fff;
+    border: 2px solid #c6ecd9;
+    color: #206040;
+    text-align: center;
+    font-weight: bold;
+    margin: 5px 7.5px 5px 15px;
+}
+
+.title-bar .step-heading {
+    font-family: "latobold","Helvetica",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.title-bar {
+    background-color: #339966;
+}
+
+.move-right {
+    margin-left: auto;
+}
+
+.btn-change {
+    width: auto;
+    color: #6a8d8d;
+    background-color: #fff;
+    border-color: #6a8d8d;
+    text-transform: none;
+    font-size: 13px;
+    padding: 4px 6px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 15px;
+}
+
+.payment-select-option {
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+}
+
+.btn-style {
+    font-weight: bold;
+    display: inline-block;
+    background-color: #133926;
+    line-height: 1.5;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 19px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+button:active {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
+    color: black;
+}
+
+/*.payment-details {
+    width: fit-content;
+    margin-left: 10%;
+}*/
+
+.title {
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 6%;
+    padding-bottom: 3%;
+    text-align: center;
+}
+
+.main-padding {
+    padding-bottom: 2%;
+}
+
+header {
+    width: 100%;
+    color: black;
+    top: 0;
+    height: fit-content;
+}
+
+.navigation-bar {
+    display: flex;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.subheader-stanga {
+    text-align: left;
+    font-size: 35px;
+    color: black;
+    font-family: "Garamond", sans-serif;
+    flex: 75%;
+    transform: scale(1, 1.5);
+    letter-spacing: 2px;
+    padding-left: 80%;
+    display: flex;
+    background: white;
+    width: fit-content;
+    height: fit-content;
+}
+
+.subheader-stanga span {
+    padding-top: 8px;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.container-logo img {
+    width: 90px;
+}
+
+
+.footer {
+    background: #e6ffe6;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: darkgray;
+    width: 100%;
+}
+
+.contact {
+    text-align: left;
+    padding: 15px 300px;
+}
+.contact p {
+    padding: 3px;
+    margin: 0 !important;
+}
+
+.subfooter {
+    text-align: right;
+    padding: 0 100px 5px 100px;
+}
